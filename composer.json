@@ -1,0 +1,15 @@
+{
+    "name": "kathak-dabhi/phpcs-pre-commit",
+    "description": "PHPCS check and PHPUnit run before commit",
+    "type": "script",
+    "require": {
+        "squizlabs/php_codesniffer": "^2.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kathak Dabhi",
+            "email": "kathak.dabhi@tatvasoft.com"
+        }
+    ]
+}
