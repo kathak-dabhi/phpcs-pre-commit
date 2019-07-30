@@ -43,7 +43,7 @@ then
 	fi
 
 	echo -e "\033[0;32m"Running PHPUnit..."\033[0m"
-	phpunit
+	./vendor/bin/phpunit
 
 	if [ $? != 0 ]
 	then
