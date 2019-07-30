@@ -4,7 +4,7 @@
     "type": "script",
     "require": {
         "squizlabs/php_codesniffer": "^2.7",
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^5.0"
     },
     "license": "MIT",
     "authors": [
