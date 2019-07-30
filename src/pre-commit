@@ -51,7 +51,7 @@ then
 
 	if [ PHPUNIT_ERR != 0 ]
 	then
-		echo -e "\033[41m"Fix failed UnitCase."\033[0m"
+		echo -e "\033[41m"Fix failed PHPUnit Test."\033[0m"
 		exit 1
 	fi
 fi
