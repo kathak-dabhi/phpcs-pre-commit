@@ -2,8 +2,9 @@
     "name": "kathak-dabhi/phpcs-pre-commit",
     "description": "PHPCS check and PHPUnit run before commit",
     "type": "script",
-    "require": {
-        "squizlabs/php_codesniffer": "^2.7"
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.7",
+        "phpunit/phpunit": "^7"
     },
     "license": "MIT",
     "authors": [

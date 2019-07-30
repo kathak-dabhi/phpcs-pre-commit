@@ -38,6 +38,17 @@ then
 	if [ $? != 0 ]
 	then
 		echo -e "\033[41m"Fix the error before commit."\033[0m"
+		git stash pop --quiet --index
+		exit 1
+	fi
+
+	echo -e "\033[0;32m"Running PHPUnit..."\033[0m"
+	phpunit
+
+	if [ $? != 0 ]
+	then
+		echo -e "\033[41m"Fix the error before commit."\033[0m"
+		git stash pop --quiet --index
 		exit 1
 	fi
 
