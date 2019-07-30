@@ -34,27 +34,26 @@ then
 
     echo -e "\033[0;32m"Running Code Sniffer..."\033[0m"
 	./vendor/bin/phpcs --standard=PSR2 --encoding=utf-8 -n -p $FILES
-
-	if [ $? != 0 ]
-	then
-		echo -e "\033[41m"Fix the error before commit."\033[0m"
-		git stash pop --quiet --index
-		exit 1
-	fi
+	PHPCS_ERR=$?
 
 	echo -e "\033[0;32m"Running PHPUnit..."\033[0m"
 	./vendor/bin/phpunit
+	PHPUNIT_ERR=$?
 
-	if [ $? != 0 ]
+	echo -e "\033[0;32m"Recovering your stashed code..."\033[0m"
+    git stash pop --quiet --index
+
+	if [ PHPCS_ERR != 0 ]
 	then
-		echo -e "\033[41m"Fix the error before commit."\033[0m"
-		git stash pop --quiet --index
+		echo -e "\033[41m"Fix PHPCS the error before commit."\033[0m"
 		exit 1
 	fi
 
-    echo -e "\033[0;32m"Recovering your stashed code..."\033[0m"
-    git stash pop --quiet --index
-
+	if [ PHPUNIT_ERR != 0 ]
+	then
+		echo -e "\033[41m"Fix failed UnitCase."\033[0m"
+		exit 1
+	fi
 fi
 
 exit $?

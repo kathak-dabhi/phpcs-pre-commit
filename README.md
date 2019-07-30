@@ -1,5 +1,5 @@
 # About
-Installed git pre-commit hook for running PHPCS code checking to PSR2 coding standard. It checks only files that are to be committed.
+Install git pre-commit hook for running PHPCS code checking to [PSR-2](https://www.php-fig.org/psr/psr-2) coding standard. It checks only files that are to be committed.
 And run PHPUnit to run unit tests
 
 # Install
